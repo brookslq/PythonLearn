@@ -35,15 +35,59 @@
 # else:
 #     print('Your birthday does not appears in the first million digits of pi!')
 
-filename = 'programming.txt'
 
-# w 模式下打开已存文件，会将原有内容清空。
-# a 模式下打开文件，会对文件内容进行附加
-with open(filename, 'a') as m_file:
-    #w
-    # m_file.write('I love miss tang.\n')
-    # m_file.write("haha\n")
+# 写文件
+# filename = 'programming.txt'
+#
+# # w 模式下打开已存文件，会将原有内容清空。
+# # a 模式下打开文件，会对文件内容进行附加
+# with open(filename, 'a') as m_file:
+#     #w
+#     # m_file.write('I love miss tang.\n')
+#     # m_file.write("haha\n")
+#
+#     #a
+#     m_file.write('coming\n')
+#     m_file.write('beautiful')
 
-    #a
-    m_file.write('coming\n')
-    m_file.write('beautiful')
+# ###异常处理
+# print('Give me two numbers, and I`ll divide them.')
+# print("Enter 'q' to quit.")
+#
+# while True:
+#     first_number = input('\nFirst number: ')
+#     if first_number == 'q':
+#         break
+#     second_number = input('\nSecond number: ')
+#     if second_number == 'q':
+#         break
+#     try:
+#         answer = int(first_number) / int(second_number)
+#     except ZeroDivisionError:
+#         # print("You can`t divide by 0!")
+#         pass
+#     else:
+#         print(answer)
+#
+#
+#
+# try:
+#     print(5/0)
+# except ZeroDivisionError:
+#     print('You can not divide by zero!')
+
+
+#存储数据
+import json
+
+numbers = [3,42,1,24,5,6,7,86,44,67]
+filename = 'numbers.json'
+#存储数据
+with open(filename, 'w') as number_jsonfile:
+    json.dump(numbers, number_jsonfile)
+
+#读取数据
+with open(filename, 'r') as number_readjson:
+    num_json = json.load(number_readjson)
+
+print(num_json)
